@@ -1,0 +1,6 @@
+@forward "./default" with (
+  $link-color-normal: darkred !default,
+  $link-color-hover: red !default,
+  // $link-decoration-normal: none, // Same as default, no need to override
+  $link-decoration-hover: none !default,
+);
