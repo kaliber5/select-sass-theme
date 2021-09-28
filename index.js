@@ -10,7 +10,7 @@ module.exports = {
   name: require('./package').name,
 
   preprocessTree(type, tree) {
-    if (type === 'css' && themeName !== 'default') {
+    if (type === 'css') {
       tree = debugTree(tree, 'input');
 
       tree = stew.rm(tree, `app/styles/config/themes/_current-theme.scss`);
@@ -19,11 +19,6 @@ module.exports = {
         tree,
         `app/styles/config/themes/_${themeName}.scss`,
         `app/styles/config/themes/_current-theme.scss`
-      );
-
-      tree = stew.rm(
-        tree,
-        `${this.app.name}/styles/config/themes/_current-theme.scss`
       );
 
       tree = stew.mv(

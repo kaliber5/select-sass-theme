@@ -54,15 +54,15 @@ File structure
 
 This addon's blueprint will create the following files in your app:
 
-| Filename                                       | Usage                                                                                                                                           |
-| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `app/styles/config/themes/_current-theme.scss` | Current theme file. Reexports the default theme. When the app is built with a theme env var, this file is replaced with one of the theme files. |
-| `app/styles/config/themes/_default.scss`       | Must define default values of all theme variables.                                                                                              |
-| `app/styles/config/themes/_[theme-name].scss`  | Reexports the defaults, may override any of the theme variables.                                                                                |
+| Filename                                       | Usage                                                               |
+| ---------------------------------------------- | ------------------------------------------------------------------- |
+| `app/styles/config/themes/_current-theme.scss` | Does not exist. Gets created during build by renaming a theme file. |
+| `app/styles/config/themes/_default.scss`       | Must define default values of all theme variables.                  |
+| `app/styles/config/themes/_[theme-name].scss`  | Reexports the defaults, may override any of the theme variables.    |
 
-When the app builds without `EBMER_THEME` env var, nothing happens. You can `@use` the  `app/styles/config/themes/_current-theme.scss` file, which proxies to the default theme.
+When the app builds without `EBMER_THEME` env var, the `app/styles/config/themes/_current-theme.scss` file will be created by renaming `_default.scss`.
 
-When the app builds with an `EBMER_THEME` env var, the `app/styles/config/themes/_current-theme.scss` file will be replaced with one of the theme files.
+When the app builds with an `EBMER_THEME` env var, the `app/styles/config/themes/_current-theme.scss` file will be created by renaming one of the theme files.
 
 For example, if you have `app/styles/config/themes/_client2.scss` and you build with `EMBER_THEME=client2 ember s`, then `app/styles/config/themes/_current-theme.scss` will be overwritten with the content of `_client2.scss`.
 
