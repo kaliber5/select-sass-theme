@@ -1,3 +1,8 @@
+## v0.1.1 (2021-09-28)
+
+- Use broccoli-debug instead of stew.debug
+
+
 ## v0.1.0 (2021-09-28)
 
 Initial release.
