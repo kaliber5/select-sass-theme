@@ -1,13 +1,18 @@
 'use strict';
 
 const stew = require('broccoli-stew');
+const BroccoliDebug = require('broccoli-debug');
 const themeName = process.env.EMBER_THEME || 'default';
+
+const debugTree = BroccoliDebug.buildDebugCallback('select-sass-theme');
 
 module.exports = {
   name: require('./package').name,
 
   preprocessTree(type, tree) {
     if (type === 'css' && themeName !== 'default') {
+      tree = debugTree(tree, 'input');
+
       tree = stew.rm(tree, `app/styles/config/themes/_current-theme.scss`);
 
       tree = stew.mv(
@@ -27,7 +32,7 @@ module.exports = {
         `${this.app.name}/styles/config/themes/_current-theme.scss`
       );
 
-      return stew.debug(tree);
+      tree = debugTree(tree, 'output');
     }
 
     return tree;
