@@ -1,4 +1,4 @@
-@kaliber5/select-sass-theme
+select-sass-theme
 ==============================================================================
 
 Built-time Sass theme switcher.
@@ -41,7 +41,7 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install @kaliber5/select-sass-theme
+ember install select-sass-theme
 ```
 
 Most likely, you need [ember-cli-sass](https://github.com/adopted-ember-addons/ember-cli-sass) as well.

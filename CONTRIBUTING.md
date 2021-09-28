@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd @kaliber5/select-sass-theme`
+* `cd select-sass-theme`
 * `yarn install`
 
 ## Linting
