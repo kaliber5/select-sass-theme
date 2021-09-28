@@ -68,6 +68,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "before": "ember-cli-sass"
+    "after": "ember-cli-sass"
   }
 }
